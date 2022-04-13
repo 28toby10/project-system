@@ -9,7 +9,14 @@ if (isset($_GET['rm'])) {
     header('location: projects.php');
 }
 
-$rm = mysqli_query($link, "SELECT * FROM projects");
+if (isset($_GET['mv'])) {
+    $id = $_GET['mv'];
+    mysqli_query($link, "INSERT INTO `projects-done` SELECT user,user,task,project,created_at FROM projects WHERE id=$id");
+    mysqli_query($link, "DELETE FROM projects WHERE id=$id");
+    header('location: projects.php');
+}
+
+$select = mysqli_query($link, "SELECT * FROM projects");
 
 
 ?>
@@ -23,7 +30,7 @@ $rm = mysqli_query($link, "SELECT * FROM projects");
     <style>
         body{ font: 14px sans-serif; }
         .wrapper{ width: 360px; padding: 20px; }
-        /* table{ font: 14px sans-serif; text-align: center; } */
+        table{ font: 14px sans-serif; text-align: center; }
         table {width: 50%; margin: 30px auto; border-collapse: collapse;}
         tr {border-bottom: 1px solid #cbcbcb;}
     </style>
@@ -51,7 +58,7 @@ $rm = mysqli_query($link, "SELECT * FROM projects");
         <thead>
         
         <tbody>
-        <?php $i = 1; while ($row = mysqli_fetch_array($rm)) { ?>
+        <?php $i = 1; while ($row = mysqli_fetch_array($select)) { ?>
         <tr>
             <td><?php echo $i; ?></td>
             <td class="user"><?php echo $row['user']; ?></td>
@@ -59,7 +66,8 @@ $rm = mysqli_query($link, "SELECT * FROM projects");
             <td class="project"><?php echo $row['project']; ?></td>
             <td class="created_at"><?php echo $row['created_at']; ?></td>
             <td class="delete">
-            <a href="projects.php?rm=<?php echo $row['id']; ?>" class="btn btn-danger">x</a>
+            <a href="projects.php?rm=<?php echo $row['id']; ?>" class="btn btn-danger">✘</a>
+            <a href="projects.php?mv=<?php echo $row['id']; ?>" class="btn btn-success">✔</a>
             </td>
         </tr>
         
