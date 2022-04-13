@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
   `user` varchar(255) NOT NULL,
   `task` varchar(255) NOT NULL,
+  `project` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
 );
 
