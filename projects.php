@@ -39,7 +39,7 @@ $select = mysqli_query($link, "SELECT * FROM projects");
 <body>
     <div class="wrapper">
         <h2>Huidige taken</h2>
-        <p>Als een taak is afgerond kan je die verwijderen</p>
+        <p>Als een taak is afgerond kan je die afvinken</p>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
