@@ -101,6 +101,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <a class="btn btn-link ml-2" href="projects.php">Annuleren</a>
             </div>
         </form>
-    </div>    
+    </div>
 </body>
 </html>
