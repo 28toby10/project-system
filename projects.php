@@ -5,6 +5,7 @@ require_once "config.php";
 
 if (isset($_GET['rm'])) {
     $id = $_GET['rm'];
+    mysqli_query($link, "INSERT INTO `projects-delte` SELECT user,user,task,project,created_at FROM projects WHERE id=$id");
     mysqli_query($link, "DELETE FROM projects WHERE id=$id");
     header('location: projects.php');
 }
