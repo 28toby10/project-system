@@ -5,7 +5,7 @@ require_once "config.php";
 
 if (isset($_GET['rm'])) {
     $id = $_GET['rm'];
-    mysqli_query($link, "INSERT INTO `projects-delte` SELECT user,user,task,project,created_at FROM projects WHERE id=$id");
+    mysqli_query($link, "INSERT INTO `projects-delete` SELECT user,user,task,project,created_at FROM projects WHERE id=$id");
     mysqli_query($link, "DELETE FROM projects WHERE id=$id");
     header('location: projects.php');
 }
@@ -18,7 +18,6 @@ if (isset($_GET['mv'])) {
 }
 
 $select = mysqli_query($link, "SELECT * FROM projects");
-
 
 ?>
 
@@ -40,7 +39,7 @@ $select = mysqli_query($link, "SELECT * FROM projects");
 <body>
     <div class="wrapper">
         <h2>Huidige taken</h2>
-        <p>Als een taak is afgerond kan je die afvinken</p>
+        <h9>Als een taak is afgerond kan je die afvinken</p>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">

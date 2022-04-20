@@ -1,3 +1,10 @@
+<?php
+// Include config file
+require_once "config.php";
+
+$select = mysqli_query($link, "SELECT * FROM `projects-done`");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +19,11 @@
         table { width: 50%; margin: 30px auto; border-collapse: collapse; }
         tr { border-bottom: 1px solid #cbcbcb; }
         p { text-align: center; }
+        h1 { text-align: center; }
     </style>
 </head>
 <body>
+    <h1 class="my-5">Taken die zijn afgerond</h1>
     <p>
         <a href="projects.php" class="btn btn-warning">Taken</a>
         <a href="deleted.php" class="btn btn-danger">Verwijderde taken</a>
