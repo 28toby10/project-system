@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>Taak maken</h2>
-        <p>Vul dit in om een taak toe te voegen.</p>
+        <h9>Vul dit in om een taak toe te voegen.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Gebruiker</label>
