@@ -30,7 +30,23 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `user` varchar(255) NOT NULL,
   `task` varchar(255) NOT NULL,
   `project` varchar(255) NOT NULL,
-  `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS `projects-done` (
+  `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `task` varchar(255) NOT NULL,
+  `project` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS `projects-delete` (
+  `id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `task` varchar(255) NOT NULL,
+  `project` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 );
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
