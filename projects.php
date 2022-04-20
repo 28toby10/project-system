@@ -31,8 +31,9 @@ $select = mysqli_query($link, "SELECT * FROM projects");
         body{ font: 14px sans-serif; }
         .wrapper{ width: 360px; padding: 20px; }
         table{ font: 14px sans-serif; text-align: center; }
-        table {width: 50%; margin: 30px auto; border-collapse: collapse;}
-        tr {border-bottom: 1px solid #cbcbcb;}
+        table { width: 50%; margin: 30px auto; border-collapse: collapse; }
+        tr { border-bottom: 1px solid #cbcbcb; }
+        p { text-align: center; }
     </style>
 </head>
 <body>
@@ -46,6 +47,10 @@ $select = mysqli_query($link, "SELECT * FROM projects");
             </div>
         </form>
     </div>
+    <p>
+        <a href="finished.php" class="btn btn-success">Afgemaakte taken</a>
+        <a href="deleted.php" class="btn btn-danger">Verwijderde taken</a>
+    </p>
     <table>
         <thead>
         <tr>
