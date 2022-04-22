@@ -16,7 +16,7 @@
 -- Database: `demo`
 --
 
--- -------------------------------------------------------- 
+-- --------------------------------------------------------
 
 CREATE DATABASE IF NOT EXISTS `project-system` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `project-system`;
