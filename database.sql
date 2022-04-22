@@ -18,8 +18,8 @@
 
 -- --------------------------------------------------------
 
-CREATE DATABASE IF NOT EXISTS `login-system` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `login-system`;
+CREATE DATABASE IF NOT EXISTS `project-system` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `project-system`;
 
 --
 -- Table structure for table `projects`
